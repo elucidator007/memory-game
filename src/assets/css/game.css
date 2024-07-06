@@ -1,0 +1,485 @@
+body {
+  position: relative;
+  margin: 0;
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('./../img/background-image.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: rgba(0, 0, 0, 0.5); /* Add this line to add a dark overlay */
+  opacity: 0.5;
+  z-index: -1;
+}
+
+
+.game {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+  color: #000;
+  overflow: auto;
+}
+
+.game-name {
+  font-family: SF Pro Text;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 30px;
+  line-height: 23.87px;
+  letter-spacing: 0.3px;
+}
+
+.game-item {
+  position: relative;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  width: 100%;
+  /* height: 208px; */
+  margin-top: 32px;
+  background: #f4efe6;
+  border: 1px solid #EAE8FF;
+  box-sizing: border-box;
+  box-shadow: 0px 6px 15px rgba(42, 27, 129, 0.05);
+  border-radius: 10px;
+  overflow: hidden; /* Ensure child elements stay within the parent */
+  overflow-y: auto;
+  height: 80vh;
+}
+
+.game-item-logo {
+  margin-top: 20px;
+  max-width: 50%; /* Ensure the image does not overflow the parent width */
+  height: auto; /* Maintain the aspect ratio */
+  display: block; /* Removes any extra space below the image */
+  object-fit: contain; /* Make sure the entire image is visible within its container */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.game-item-head {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 108px;
+  background: #EAE8FF;
+  border-radius: 10px 10px 0px 0px;
+}
+
+.game-logo {
+  position: absolute;
+  left: 16px;
+  /* right: 86.81%; */
+  top: 10%;
+  /* bottom: 65.87%; */
+  width: 32px;
+  height: 42px;
+}
+
+.game-title {
+  position: absolute;
+  height: 22px;
+  left: 200px;
+  /* right: 186px; */
+  top: 39px;
+
+  /* Button/Default */
+
+  font-family: SF Pro Text;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 22px;
+  /* identical to box height, or 129% */
+
+  text-align: center;
+  letter-spacing: 0.3px;
+
+  /* Shades/Black */
+
+  color: #000000;
+}
+
+
+.game-description-title {
+  padding-left: 16px;
+  padding-right: 16px;
+  width: 100%;
+  margin-top: 120px;
+  height: 22px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 22px;
+  /* identical to box height, or 129% */
+
+  letter-spacing: 0.3px;
+
+  /* Shades/Black */
+
+  color: #000000;
+}
+
+.game-progress-text {
+  padding-left: 16px;
+  padding-right: 16px;
+  width: 100%;
+  margin-top: 12px;
+  font-family: SF Pro Text;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  /* identical to box height, or 143% */
+
+  letter-spacing: -0.4px;
+
+  /* Shades/Gray 1 */
+
+  color: #333333;
+}
+
+.game-progress-bar {
+  margin-left: 16px;
+  margin-right: 16px;
+  width: auto;
+  margin-top: 10px;
+  height: 4px;
+  background: #EAE8FF;
+  border-radius: 9px;
+}
+
+.game-progress-line {
+  /* position: absolute; */
+  width: 49px;
+  height: 4px;
+  left: 0px;
+  top: 0px;
+
+  /* Primary/Iris */
+
+  background: #563FE3;
+  border-radius: 9px;
+}
+
+.alert--header {
+  display: block !important;
+  font-family: SF Pro Text;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 20px;
+  text-align: center;
+  letter-spacing: 0.3px;
+  color: #000000;
+}
+
+
+.alert-description-header {
+  width: 100%;
+  font-family: SF Pro Text;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+  letter-spacing: 0.3px;
+}
+
+.alert-description {
+  width: 100%;
+  margin-top: 24px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 20px;
+  text-align: center;
+  letter-spacing: 0.3px;
+  margin-bottom: 54px;
+
+  /* Shades/Black */
+
+  color: #000000;
+}
+
+
+.alert--button {
+  width: 100%;
+  align-items: center;
+  height: 48px;
+  margin-bottom: 10px;
+  background: #563FE3;
+  border-radius: 10px;
+  color: #FFFFFF;
+  font-family: SF Pro Text;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 22px;
+  /* identical to box height, or 129% */
+
+  text-align: center;
+  letter-spacing: 0.3px;
+}
+
+.game-attempt {
+  margin-top: 32px;
+}
+
+.attemp-description {
+  font-family: SF Pro Text;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 24px;
+  letter-spacing: 0.3px;
+
+  /* Shades/Black */
+
+  color: #000000;
+}
+
+.attemp-progress-text {
+  width: 100%;
+  font-family: SF Pro Text;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 24px;
+  /* identical to box height, or 141% */
+  letter-spacing: 0.3px;
+
+  /* Shades/Black */
+
+  color: #000000;
+}
+
+.attempt-progressbar {
+  width: 100%;
+  height: 16px;
+  background: whitesmoke;
+  border-radius: 10px;
+  margin-top: 8px;
+}
+
+.attempt-progressbar-improvement {
+  position: relative; /* Add this */
+  height: 16px;
+  background: linear-gradient(to bottom, #b02a28, #d53633);
+  border-radius: 10px;
+}
+
+.progress-img {
+  position: absolute; /* Add this */
+  top: -180%; /* Adjust as needed to vertically center the image */
+  right: 0; /* Position at the end */
+  transform: translateX(50%); /* Center the image horizontally at the end */
+  height: 62px; /* Adjust height as needed */
+}
+
+
+.main-game {
+  margin-top: 31px;
+}
+
+.game-card {
+  background: #d53633;
+  display: block;
+  box-sizing: border-box;
+  box-shadow: 0px 6px 15px rgba(42, 27, 129, 0.05);
+  border-radius: 10px;
+  cursor: pointer;
+  background-size: cover; /* Ensures the background image covers the entire div */
+  background-repeat: no-repeat; /* Prevents the background image from repeating */
+  background-position: center;
+  color: whitesmoke;
+}
+
+.game-card.open {
+  transform: rotateY(0);
+  cursor: default;
+  animation-name: flipInY;
+  -webkit-backface-visibility: visible !important;
+  backface-visibility: visible !important;
+  animation-duration: .75s;
+}
+
+.game-card.close {
+  transform: rotateY(0);
+  cursor: default;
+  animation-name: flipOutY;
+  -webkit-backface-visibility: visible !important;
+  backface-visibility: visible !important;
+  animation-duration: .75s;
+}
+
+.game-card-content {
+  height: 100%;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+
+  align-items: center !important;
+  justify-content: center !important;
+  vertical-align: middle;
+  
+}
+
+.game-card-image {
+  max-width: 70px;
+  max-height: 70px;
+}
+
+.game-card-text {
+  font-family: SF Pro Text;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.3px;
+  color: #000000;
+}
+
+.game-col {
+  position: relative;
+  width: 100%;
+  padding: 4px;
+}
+
+.game-col-3x4,
+.game-col-4x4 {
+  flex: 0 0 25%;
+  max-width: 25%;
+}
+
+.game-col-3x4 .game-card,
+.game-col-4x4 .game-card,
+.game-col-4x5 .game-card {
+  height: 127px;
+}
+
+.game-col-4x5 {
+  flex: 0 0 20%;
+  max-width: 20%;
+}
+
+.game-col-4x5 .game-card-text {
+  font-size: 16px !important;
+  line-height: 20px !important;
+}
+
+.game-col-4x5 .game-card-image {
+  max-width: 55px !important;
+  max-height: 55px !important;
+}
+
+.game-col-5x6,
+.game-col-6x6 {
+  flex: 0 0 16.66%;
+  max-width: 16.66%;
+}
+
+.game-col-5x6 .game-card,
+.game-col-6x6 .game-card {
+  height: 127px;
+}
+
+.game-col-5x6 .game-card-image,
+.game-col-6x6 .game-card-image {
+  max-width: 55px !important;
+  max-height: 55px !important;
+}
+
+.header {
+  background: linear-gradient(to bottom, #b02a28, #d53633);
+  top: 0;
+  padding: 15px 25px;
+  color: whitesmoke;
+  display: flex;
+  align-items: center;
+  font-size: xx-large;
+  gap: 10px;
+  line-height: 10px;
+  font-family: "Pirata One", system-ui;
+}
+
+.strawhats-logo{
+  height: 50px;
+}
+
+.how-to-play{
+  margin: 5px 15px;
+}
+
+.htp-main-heading{
+  font-family: "Pirata One", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  color: #d73332;
+  font-size: x-large;
+  text-align: center;
+}
+
+.htp-heading{
+  font-family: "Pirata One", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  color: #d73332;
+  font-size: large;
+}
+
+.htp-desc{
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, system-ui;
+  font-weight: 400;
+  font-style: normal;
+  color: darkslategray;
+  font-size: small;
+}
+
+.level-image{
+  height: 60px;
+  margin: 10px 5px;
+}
+
+.attempt-head{
+  display: flex;
+  flex-direction: row;
+  margin-bottom:35px ;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Pirata One", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  word-spacing: 2px;
+  margin-top: 15px;
+}
+
+.level-finder{
+  text-align: center;
+  font-family: "Pirata One", system-ui;
+  font-size: x-large;
+}
